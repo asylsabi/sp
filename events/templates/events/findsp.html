@@ -1,0 +1,41 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+    <h1>Анкеты всех спонсоров</h1>
+    <h2>Заполни анкету</h2>
+    <form action="{% url 'find_sp' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+    </form>
+{% if user.is_authenticated %}
+        <h2>Ваша анкета</h2>
+        <ul>
+            <li>
+                <h3>{{ user.username }}</h3>
+                <p>Название вашей компании: {{ user.sponsor.company_name }}</p>
+                <p>Представитель: {{ user.sponsor.contact_name }}</p>
+                <p>О компании: {{ user.sponsor.about }}</p>
+                <p>Условия и детали от спонсора: {{ user.sponsor.description }}</p>
+                <p>Номер телефона: {{ user.sponsor.phone_number }}</p>
+                <p>Почта: {{ user.sponsor.email }}</p>
+                <a href="{% url 'delete_sp' %}">Удалить анкету</a>
+                <hr>
+            </li>
+        </ul>
+    {% endif %}
+    <ul>
+        {% for a in anketa %}
+            <li>
+                <h2>{{a.user}}</h2>
+                <p>Название компании: {{a.company_name}}</p>
+                <p>Представитель: {{a.contact_name}}</p>
+                <p>О компании: {{a.about}}</p>
+                <p>Условия и детали от спонсора: {{a.description}}</p>
+                <p>Номер телефона: {{a.phone_number}}</p>
+                <p>Почта: {{a.email}}</p>
+                <hr>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

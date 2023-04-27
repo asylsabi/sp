@@ -1,0 +1,75 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<head><!-- Подключение шрифта Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,80);
+
+  /* Определяем пастельные цвета */
+  :root {
+    --pastel-pink: #f9c8d9;
+    --pastel-blue: #c8f9f4;
+    --pastel-yellow: #f9f4c8;
+    --pastel-green: #c8f9c8;
+  }
+
+  /* Применяем пастельные цвета к элементам страницы */
+  body {
+  font-family: 'Montserrat', sans-serif;
+    background-color: var(--pastel-pink); /* Фон страницы */
+    color: var(--pastel-blue); /* Цвет текста */
+    font-family: Montserrat, sans-serif; /* Шрифт текста */
+  }
+
+  h1 {
+    color: var(--pastel-yellow); /* Цвет заголовка */
+    text-align: center; /* Выравнивание заголовка по центру */
+  }
+
+  p {
+    color: var(--pastel-green); /* Цвет абзацев */
+    margin: 20px; /* Отступы абзацев */
+  }
+</style>
+
+<p>Добро пожаловать на сайт, где вы можете найти своего идеального спонсора для вашего мероприятия. Наша платформа предоставляет удобный и надежный способ связаться с потенциальными спонсорами и предоставить им коммерческое предложение.
+</p>
+<p> Мы понимаем, что поиск спонсора может быть трудным и затратным процессом, особенно для небольших мероприятий и стартапов. Поэтому мы создали этот сайт, чтобы помочь вам найти подходящего спонсора, который будет готов поддержать ваше мероприятие финансово или материально. </p>
+
+<p> Мы предлагаем удобный способ связи между event-организациями и потенциальными спонсорами. Вы можете разместить свое мероприятие на нашем сайте и дать потенциальным спонсорам возможность связаться с вами, предложив вам свою помощь. Вы также можете связаться с потенциальными спонсорами сами, отправив им коммерческое предложение, используя нашу платформу. </p>
+
+<p> Мы стремимся обеспечить безопасность и защиту конфиденциальности наших пользователей, поэтому мы проверяем всех потенциальных спонсоров, прежде чем размещать их на нашем сайте. Мы также предоставляем инструменты, которые позволяют легко управлять своими мероприятиями и коммуникацией с потенциальными спонсорами.</p>
+
+<h2> Присоединяйтесь к нашему сообществу и найдите подходящего спонсора для вашего мероприятия прямо сейчас! </h2>
+<style>@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,80);
+
+  /* Определяем пастельные цвета */
+  :root {
+    --pastel-pink: #f9c8d9;
+    --pastel-blue: #c8f9f4;
+    --pastel-yellow: #f9f4c8;
+    --pastel-green: #c8f9c8;
+  }
+
+  /* Применяем пастельные цвета к элементам страницы */
+  body {
+  font-family: 'Montserrat', sans-serif;
+    background-color: var(--pastel-pink); /* Фон страницы */
+    color: var(--pastel-blue); /* Цвет текста */
+    font-family: Montserrat, sans-serif; /* Шрифт текста */
+  }
+
+  h1 {
+    color: var(--pastel-yellow); /* Цвет заголовка */
+    text-align: center; /* Выравнивание заголовка по центру */
+  }
+
+  p {
+    color: var(--pastel-green); /* Цвет абзацев */
+    margin: 20px; /* Отступы абзацев */
+  }</style>
+{% endblock %}

@@ -1,0 +1,70 @@
+
+{% extends 'events/base.html' %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<ul class="list-posts">
+
+    {% for p in posts %}
+        <!-- Создаем элемент div с классом border -->
+        <div class="border">
+            <li><div class="post-panel" style="background-color:#FDC073; display:inline-flex;width:900px;
+
+
+    }">
+                <p class="first" style="margin-right:300px;">Категория: {{p.cat}}</p>
+                <p class="last">Дата публикации: {{p.time_update|date:"d-m-Y H:i:s"}}</p>
+            </div>
+    {% if p.photo %}
+          <p><img class="img-post-left thumb" src="{{ p.photo.url }}"></p>
+    {% endif %}
+
+                <h2> {{p.title}}</h2>
+                <p>Дата мероприятия: {{p.date}}</p>
+                <p>Локация мероприятия: {{p.location}}</p>
+                <p>Бюджет: {{p.budget}}</p>
+                <p>Коммерческое предложение: {% if p.attachment %}
+        <embed src="{{ p.attachment.url }}" type="application/pdf" width="100%" height="600px" />
+    {% endif %}
+                </p>
+
+            {% autoescape on %}
+            {{p.description| linebreaks| truncatewords:50 }}
+            {% endautoescape %}
+
+            <div class="clear"></div>
+            <p class="link-read-post"><a href="{% url 'post' p.pk %}">Посмотреть</a></p>
+
+        </li>
+        </div>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+<!-- montserrat -->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+  /* Применяем шрифт montserrat к всем элементам страницы */
+  * {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Определяем пастельные цвета */
+  :root {
+    --pastel-pink: #f9c8d9;
+    --pastel-blue: #c8f9f4;
+    --pastel-yellow: #f9f4c8;
+    --pastel-green: #c8f9c8;
+  }
+
+  /* Определяем стиль для рамки */
+  .border {
+    border: 5px solid var(--pastel-blue); /* Цвет и толщина рамки */
+    border-radius: 20px; /* Радиус закругления рамки */
+    padding: 10px; /* Отступы внутри рамки */
+    margin: 20px; /* Отступы вокруг рамки */
+    background-color: var(--pastel-pink); /* Фон рамки */
+  }
+</style>

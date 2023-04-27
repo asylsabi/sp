@@ -1,0 +1,17 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<h1>{{ post.title }}</h1>
+
+{% if post.photo %}
+<p><img class="img-post-left" src="{{post.photo.url}}"></p>
+{% endif %}
+            <p>Дата мероприятия: {{post.date}}</p>
+            <p>Локация: {{post.location}}</p>
+            <p>Предполагаемый бюджет: {{post.budget}}</p>
+            <p>Коммерческое предложение: {{post.attachment}}</p>
+        {% autoescape on %}
+        {{post.description| linebreaks}}
+        {% endautoescape %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+  <h2>Удаление анкеты спонсора</h2>
+  <p>Вы действительно хотите удалить свою анкету?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+  </form>
+{% endblock %}
